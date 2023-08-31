@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AuthForm from './AuthForm';
-import styles from '../styles/Auth/AuthForm.css'
+import '../styles/Auth/AuthForm.css'
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
@@ -16,21 +16,21 @@ const Login = ({ onLogin }) => {
     <AuthForm
       title="Login"
       onSubmit={handleSubmit}
-      className={styles.loginForm}
+      className='auth-form'
     >
       <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className={styles.input}
+        className="input"
       />
       <input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className={styles.input}
+        className='password'
       />
     </AuthForm>
   );
