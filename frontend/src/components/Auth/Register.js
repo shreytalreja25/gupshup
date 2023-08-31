@@ -7,11 +7,45 @@ const Register = ({ onRegister }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Call registration API using onRegister function
+  //   onRegister(username, email, password);
+  // };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Call registration API using onRegister function
-    onRegister(username, email, password);
+  
+    // Create a new user object
+    const user = {
+      username: username,
+      email: email,
+      password: password,
+    };
+  
+    // Make a POST request to the /api/users/create endpoint
+    fetch(`${process.env.API_URL}/api/users/create`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          // The user was created successfully
+          console.log('User created successfully');
+        } else {
+          // There was an error creating the user
+          console.log('Error creating user');
+        }
+      })
+      .catch((error) => {
+        // There was an error communicating with the server
+        console.log('Error communicating with server');
+      });
   };
+
 
   return (
     <AuthForm

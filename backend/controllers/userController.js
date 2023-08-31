@@ -2,9 +2,27 @@ const User = require('../models/User');
 
 const createUser = async (req, res) => {
   try {
-    const newUser = new User(req.body);
+    const { username, email, password } = req.body;
+
+    // Check if the email is already registered
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(409).json({ message: 'Email already registered' });
+    }
+
+    // Hash the password before saving
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create and save the user to the database
+    const newUser = new User({
+      username,
+      email,
+      password: hashedPassword,
+    });
+
     await newUser.save();
-    res.status(201).json(newUser);
+
+    res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
