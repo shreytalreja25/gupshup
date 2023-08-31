@@ -1,21 +1,37 @@
-.auth-form {
-    background-color: #cde4f3;
+ body{
+    background-color: #bdf2f4;
     border-radius: 8px;
     padding: 20px;
+    height: 100%;
+  }
+
+  .og{
+    background: #6f8db5;
+    width: 51%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    height: 300px;
+    margin: auto;
+    border-radius: 5px;
   }
   
   .h2 {
     color: #333;
     font-size: 18px;
     margin-bottom: 10px;
+    /* display: inline; */
+    text-align: center;
   }
   
   input {
     width: 80%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px
+    border: 1px solid #4f4949;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin: 10px;
   }
   
    .btn {
@@ -24,5 +40,13 @@
     font-size: 16px;
     padding: 10px;
     border-radius: 4px;
+    margin: 10px;
+  }
+
+  .outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
   }
   
