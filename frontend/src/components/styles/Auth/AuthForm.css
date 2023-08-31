@@ -1,0 +1,27 @@
+.auth-form {
+    background-color: #cde4f3;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .auth-form h2 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .auth-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .auth-form button {
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  

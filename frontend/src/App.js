@@ -10,6 +10,7 @@ import ChatRoomsPage from './pages/ChatRooms';
 import ChatRoomPage from './pages/ChatRoomPage';
 import OneToOneChatsPage from './pages/OneToOneChats';
 import ProfilePage from './pages/Profile';
+import Login from './components/Auth/Login';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Sidebar />
               <div className="content">
                 <Routes>
+                  <Route path="/login" element={<Login />} />
                   <Route path="/" element={<HomePage />} />
                   <Route path="/chatrooms" element={<ChatRoomsPage />} />
                   <Route path="/chatrooms/:id" element={<ChatRoomPage />} />
