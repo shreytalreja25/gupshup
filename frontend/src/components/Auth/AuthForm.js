@@ -1,13 +1,14 @@
 import React from 'react';
-import styles from '../styles/Auth/AuthForm.css';
+import '../styles/Auth/AuthForm.css'
 
 const AuthForm = ({ title, children, onSubmit }) => {
   return (
-    <div className={styles.authForm}>
-      <h2 className={styles.title}>{title}</h2>
+    <div className=''>
+      <h2 className='h2'>{title}</h2>
       <form onSubmit={onSubmit}>
         {children}
-        <button type="submit" className={styles.button}>{title}</button>
+        <br />
+        <button type="submit" className='btn'>{title}</button>
       </form>
     </div>
   );
