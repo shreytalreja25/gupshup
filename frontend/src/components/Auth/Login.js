@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = ({ onLogin }) => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const [loading, setLoading] = useState(false);
@@ -15,21 +15,21 @@ const Login = ({ onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Call login API using onLogin function
-    onLogin(email, password);
+    onLogin(username, password);
   };
 
   // ashishcoolboy
   // password1234
 
   async function onLogin(email, password) {
-    setEmail("");
+    setUsername("");
     setPassword("");
 
     try {
       const response = await axios.post(
         "http://localhost:5000/api/users/login",
         {
-          email,
+          username,
           password,
         },
         {
@@ -61,10 +61,10 @@ const Login = ({ onLogin }) => {
   return (
     <AuthForm title="Login" onSubmit={handleSubmit} className="auth-form">
       <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        type="text"
+        placeholder="username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
         className="input"
       />
       <input

@@ -1,12 +1,34 @@
-import React from 'react';
+import React from "react";
 
-const Sidebar = () => {
-  return (
-    <div className="sidebar">
-      <h3>Sidebar Navigation</h3>
-      {/* Add navigation links here */}
-    </div>
-  );
-};
-
-export default Sidebar;
+export const Sidebar = [
+  {
+    title: "Home",
+    path: "/",
+    cName: "nav-text"
+  },
+  {
+    title: "Login",
+    path: "/login",
+    cName: "nav-text"
+  },
+  {
+    title: "Register",
+    path: "/register",
+    cName: "nav-text"
+  },
+  {
+    title: "ChatRooms",
+    path: "/chatrooms",
+    cName: "nav-text"
+  },
+  {
+    title: "One-to-One Chats",
+    path: "/onetoonechats",
+    cName: "nav-text"
+  },
+  {
+    title: "Profile",
+    path: "/profile",
+    cName: "nav-text"
+  }
+];
