@@ -34,7 +34,7 @@ function App() {
                 </Routes>
               </div>
             </div>
-            <LoadingSpinner />
+            {/* <LoadingSpinner /> */}
           </div>
         </ChatProvider>
       </AuthProvider>
