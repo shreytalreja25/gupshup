@@ -7,6 +7,7 @@ const router = express.Router();
 
 router.post('/create', validationMiddleware.validateRequestData, userController.createUser);
 router.get('/:id', authMiddleware.authenticateUser, userController.getUserById);
-// Add more routes as needed
+// router.post('/login', validationMiddleware.v, userController.loginUser);
+router.post('/login', userController.loginUser);
 
 module.exports = router;
