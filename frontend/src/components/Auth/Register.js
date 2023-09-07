@@ -77,10 +77,10 @@ const Register = () => {
           className={styles.input}
           disabled={loading}
         />
-        {error && <p className={styles.error}>{error}</p>}
-        <button type="submit" className={styles.button} disabled={loading}>
+        {/* {error && <p className={styles.error}>{error}</p>} */}
+        {/* <button type="submit" className={styles.button} disabled={loading}>
           {loading ? 'Loading...' : 'Register'}
-        </button>
+        </button> */}
       </AuthForm>
       <ToastContainer />
     </>
