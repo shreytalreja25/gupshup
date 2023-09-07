@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust the gap as per your preference */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+.profile-picture img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info h1 {
+    /* text-align: center; */
+    margin-left: 15px; 
+    color: rgb(28, 88, 102);
+  }
+  
+  .profile-name {
+    font-size: 24px;
+    margin: 5px 0;
+  }
+
+.profile-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.followers, .following {
+    text-align: center;
+}
+
+.count {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.label {
+    font-size: 14px;
+    color: #666;
+}
