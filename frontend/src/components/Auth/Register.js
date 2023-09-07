@@ -27,7 +27,7 @@ const Register = () => {
         },
       });
 
-      if (response.status === 201) {
+      if (response.status === 200) {
         // Registration successful
         toast.success('Registration successful', {
           position: toast.POSITION.TOP_CENTER,

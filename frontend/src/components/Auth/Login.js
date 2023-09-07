@@ -21,7 +21,7 @@ const Login = ({ onLogin }) => {
   // ashishcoolboy
   // password1234
 
-  async function onLogin(email, password) {
+  async function onLogin(username, password) {
     setUsername("");
     setPassword("");
 
@@ -39,7 +39,7 @@ const Login = ({ onLogin }) => {
         }
       );
 
-      if (response.status === 201) {
+      if (response.status === 200) {
         // Login successful
         toast.success("Login successful", {
           position: toast.POSITION.TOP_CENTER,
@@ -74,6 +74,7 @@ const Login = ({ onLogin }) => {
         onChange={(e) => setPassword(e.target.value)}
         className="password"
       />
+      <ToastContainer/>
     </AuthForm>
   );
 };
