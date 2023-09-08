@@ -21,7 +21,6 @@ function App() {
           <div className="app">
             <Header />
             <div className="main-container">
-              {/* <Sidebar /> */}
               <div className="content">
                 <Routes>
                   <Route path="/login" element={<Login />} />
@@ -34,7 +33,6 @@ function App() {
                 </Routes>
               </div>
             </div>
-            {/* <LoadingSpinner /> */}
           </div>
         </ChatProvider>
       </AuthProvider>
