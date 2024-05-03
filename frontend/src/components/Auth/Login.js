@@ -4,6 +4,8 @@ import "../styles/Auth/AuthForm.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { GoogleLogin } from "react-google-login";
+import FacebookLogin from "react-facebook-login";
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
@@ -18,8 +20,15 @@ const Login = ({ onLogin }) => {
     onLogin(username, password);
   };
 
-  // ashishcoolboy
-  // password1234
+  const responseGoogle = (response) => {
+    // Handle Google login response here
+    console.log(response);
+  };
+
+  const responseFacebook = (response) => {
+    // Handle Facebook login response here
+    console.log(response);
+  };
 
   async function onLogin(username, password) {
     setUsername("");
@@ -74,42 +83,21 @@ const Login = ({ onLogin }) => {
         onChange={(e) => setPassword(e.target.value)}
         className="password"
       />
+       <GoogleLogin
+        clientId="YOUR_GOOGLE_CLIENT_ID"
+        buttonText="Login with Google"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+        cookiePolicy={"single_host_origin"}
+      />
+      <FacebookLogin
+        appId="YOUR_FACEBOOK_APP_ID"
+        fields="name,email,picture"
+        callback={responseFacebook}
+      />
       <ToastContainer/>
     </AuthForm>
   );
 };
 
 export default Login;
-
-// import React, { useState } from 'react';
-// import AuthForm from './AuthForm';
-
-// const Login = ({ onLogin }) => {
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // Call login API using onLogin function
-//     onLogin(email, password);
-//   };
-
-//   return (
-//     <AuthForm title="Login" onSubmit={handleSubmit}>
-//       <input
-//         type="email"
-//         placeholder="Email"
-//         value={email}
-//         onChange={(e) => setEmail(e.target.value)}
-//       />
-//       <input
-//         type="password"
-//         placeholder="Password"
-//         value={password}
-//         onChange={(e) => setPassword(e.target.value)}
-//       />
-//     </AuthForm>
-//   );
-// };
-
-// export default Login;
